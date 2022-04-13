@@ -178,9 +178,3 @@ spur(cx+pr1+pr2+pr2+pr3, cy, m, n3, pa, 180-180/n3+(180-180/n2)*n2/n3)
     # 若 template 檔案名稱與位於外部 templates 目錄中的檔案同名, 則取外部的 template
    # return render_template('g1index.html', user=user)
 
-""" Leo launcher script
-A minimal script to launch leo.
-"""
-
-import leo.core.runLeo
-leo.core.runLeo.run()
