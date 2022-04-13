@@ -32,6 +32,7 @@
 <v t="leo.20190603200801.1"><vh>Declarations (user.py)</vh></v>
 <v t="leo.20190603200801.2"><vh>index (user.py)</vh></v>
 <v t="leo.20190603200801.3"><vh>threegear (user.py)</vh></v>
+<v t="leo.20220406113310.1"><vh>@edit F:/start.leo.py</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -147,7 +148,7 @@ userapp = Blueprint('user', __name__, url_prefix='/user', template_folder='templ
 def index():
     user = "Yen"
     # 若 template 檔案名稱與位於外部 templates 目錄中的檔案同名, 則取外部的 template
-    return render_template('index.html', user=user)
+    return render_template('g1index.html', user=user)
 </t>
 <t tx="leo.20190603200801.3">@userapp.route('/threegear', defaults={'n1':15,'n2':20,'n3':18})
 @userapp.route('/threegear/&lt;n1&gt;/&lt;n2&gt;/&lt;n3&gt;')
@@ -321,18 +322,21 @@ spur(cx+pr1+pr2+pr2+pr3, cy, m, n3, pa, 180-180/n3+(180-180/n2)*n2/n3)
 </t>
 <t tx="leo.20190603200835.1">import os
 
-"""CMSimfly 程式起始設定
+"""CMSimfly Initialization setup
 """
 
-# 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
+# get current directory, on Windows, back slash at the end of the directory
 _curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
-# 設定在 uwsgi 與近端的資料儲存目錄
+# config directory
 config_dir = _curdir + "/config/"
 </t>
 <t tx="leo.20190603200835.2">class Init(object):
     # uwsgi as static class variable, can be accessed by Init.uwsgi
     uwsgi = False
-    site_title = "CMSiMDE"
+    site_title = "cmsimde_site"
+    ip = "127.0.0.1"
+    dynamic_port = 9443
+    static_port = 8443
     @others
 </t>
 <t tx="leo.20190603200835.3">def __init__(self):
@@ -367,9 +371,9 @@ import http.server, ssl
     httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket,
                                    server_side=True,
-                                   certfile='./cmsimde/localhost.crt',
-                                   keyfile='./cmsimde/localhost.key',
-                                   ssl_version=ssl.PROTOCOL_TLSv1)
+                                   certfile='./localhost.crt',
+                                   keyfile='./localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1_2)
     print(os.getcwd())
     print("8444 https server started")
     httpd.serve_forever()
@@ -387,8 +391,8 @@ make.start()
 </t>
 <t tx="leo.20190603201017.1">from __future__ import unicode_literals
 
-AUTHOR = 'KMOL'
-SITENAME = 'CMSimfly 網際內容管理'
+AUTHOR = 'KMOLab'
+SITENAME = ''
 # 不要用文章所在目錄作為類別
 USE_FOLDER_AS_CATEGORY = False
 
