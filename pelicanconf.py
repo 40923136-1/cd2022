@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'KMOLab'
-SITENAME = ''
+AUTHOR = '40923136'
+SITENAME = 協同產品設計''
 # 不要用文章所在目錄作為類別
 USE_FOLDER_AS_CATEGORY = False
 
