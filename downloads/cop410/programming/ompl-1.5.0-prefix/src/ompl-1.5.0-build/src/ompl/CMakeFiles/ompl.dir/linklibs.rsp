@@ -1,0 +1,1 @@
+ Y:/msys64_20210419/mingw64/lib/libboost_serialization-mt.dll.a Y:/msys64_20210419/mingw64/lib/libboost_filesystem-mt.dll.a Y:/msys64_20210419/mingw64/lib/libboost_system-mt.dll.a -lpsapi -lws2_32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
