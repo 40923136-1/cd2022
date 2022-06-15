@@ -339,7 +339,7 @@ frameStops: {
 <p><strong>心得</strong>：</p>
 <p>這次畫這個三軸機械手臂，我覺得最有挑戰性的是如何畫出這個三軸的機器手臂和控制它的程式，因為我以前不是機械群的同學，這些對我來講都比較陌生，所以我還要多加緊練習，至於程式怎麼寫還需多加研究。</p>
 <p><a href="https://slides.com/audis6c82020/deck" title="W8簡報">W8簡報</a></p>
-<h1>W16</h1>
+<h1><span style="background-color: #ff0000;">W16</span></h1>
 <p>控制機械手臂的步驟:</p>
 <p>1.開啟啟動檔，並在Scite(小白板)開啟uarm_tkinter_control.py這個檔案</p>
 <p>2.開啟之後，在小白板上方有一個Tools的選項，點進去之後有一個Go的選項，按下去就會跑出一個控制面板。</p>
@@ -361,8 +361,19 @@ frameStops: {
 <div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
 <div class="winkVideoControlBarProgressLeftClass"></div>
 <div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass">
+<p>利用 OpenCV 擷取場景中的 Vision Sensor 串流影像:</p>
+<p><a href="https://mde.tw/cd2022_guide/downloads/w15_rotating_cuboid.7z">w15_rotating_cuboid.7z</a></p>
+<ol>
+<li>解開壓縮檔案, 配合 rotating_cuboid.py 中的第 17 行, 修改 coppeliaSim.exe 所在目錄, 程式設定位於 C:/CoppeliaSimEdu_4.3.0_rev3 目錄中.</li>
+<li>確定 coppeliaSim.exe 位置設定正確後, 以 SciTE 執行 rotating_cuboid.py, 將會以 headless 模式 (無 GUI 介面) 啟動 rotating_cuboid.ttt, 並將其中的兩個 Vision Sensor 串流影像取出播放.</li>
+<li>操作者按下 p 鍵, 將會暫時 pause 場景模擬.</li>
+<li>操作者按下 s 鍵, 將會重新啟動場景模擬.</li>
+<li>操作者按下 e 鍵, 將會關閉 CoppeliaSim 與 Python 並退出模擬系統.</li>
+<li>rotating_cuboid.ttt 中控制 Cuboid 旋轉的程式採 Python scripting 格式編寫.</li>
+</ol>
+</div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"><img alt="" height="540" src="/images/2022-06-13 (5).png" width="960"/></div>
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
